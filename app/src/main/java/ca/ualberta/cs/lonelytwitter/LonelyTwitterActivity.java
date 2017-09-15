@@ -53,6 +53,25 @@ public class LonelyTwitterActivity extends Activity {
 				}
 				Log.d("TWEET", newTweet.getMessage());
 
+				// Creating happy and sad mood objects
+				SadMood sad = new SadMood();
+				HappyMood happy = new HappyMood();
+				//making a new normal tweet to add moods onto
+				NormalTweet moodTweet = new NormalTweet("what is my mood?");
+
+				moodTweet.addMood(sad);
+				moodTweet.addMood(happy);
+
+
+
+
+
+
+
+
+
+
+
 
 				ArrayList<Tweet> tweetList = new ArrayList<Tweet>();
 				tweetList.add(newTweet);
