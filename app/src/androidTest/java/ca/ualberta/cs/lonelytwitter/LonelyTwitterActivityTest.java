@@ -3,9 +3,11 @@ package ca.ualberta.cs.lonelytwitter;
 import android.app.Activity;
 import android.test.ActivityInstrumentationTestCase2;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.robotium.solo.Solo;
 
+import junit.framework.Assert;
 import junit.framework.TestCase;
 
 public class LonelyTwitterActivityTest extends ActivityInstrumentationTestCase2 {
@@ -51,6 +53,26 @@ public class LonelyTwitterActivityTest extends ActivityInstrumentationTestCase2 
 
         solo.clickInList(0);
         solo.assertCurrentActivity("Wrong Activity", EditTweetActivity.class);
+    }
+
+    public void testEditTweet(){
+        solo.assertCurrentActivity("Wrong Activity", LonelyTwitterActivity.class);
+        solo.clickOnButton("Clear");
+
+        solo.enterText((EditText) solo.getView(R.id.body), "Test Tweet!");
+        solo.clickOnButton("Save");
+        solo.enterText((EditText) solo.getView(R.id.body),"");
+        solo.waitForText("Test Tweet!");
+
+        solo.clickInList(0);
+        solo.assertCurrentActivity("Wrong Activity", EditTweetActivity.class);
+
+
+        TextView textView = (TextView) solo.getView(R.id.textView2);
+        String tweet = textView.getText().toString();
+        assertEquals("Test Tweet!",tweet);
+
+
     }
 
     /**
