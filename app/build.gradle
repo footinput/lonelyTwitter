@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-
 android {
     compileSdkVersion 18
     buildToolsVersion '25.0.0'
@@ -21,3 +20,10 @@ android {
         }
     }
 }
+
+dependencies {
+
+
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.jayway.android.robotium:robotium-solo:5.6.3'
+    }

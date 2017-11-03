@@ -1,5 +1,6 @@
 package ca.ualberta.cs.lonelytwitter;
 
+<<<<<<< HEAD
 import java.util.Date;
 
 /**
@@ -9,4 +10,14 @@ import java.util.Date;
 public interface Tweetable {
     String getMessage();
     Date getDate();
+=======
+
+import java.util.Date;
+
+public interface Tweetable {
+    public String getMessage();
+
+    public Date getDate();
+
+>>>>>>> origin/f17lab7
 }
